@@ -1,0 +1,15 @@
+node_modules/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Supabase CLI local state
+supabase/.temp/
+supabase/.branches/
+
+# IDE and OS files
+.idea/
+.DS_Store
+Thumbs.db
