@@ -424,3 +424,25 @@ entrypoint = "./functions/hello/index.ts"
 # Specifies static files to be bundled with the function. Supports glob patterns.
 # For example, if you want to serve static HTML pages in your function:
 # static_files = [ "./functions/hello/*.html" ]
+
+[functions.telegram-bot]
+enabled = true
+# Telegram cannot send a Supabase JWT. The handler verifies Telegram's
+# X-Telegram-Bot-Api-Secret-Token header instead.
+verify_jwt = false
+import_map = "./functions/telegram-bot/deno.json"
+entrypoint = "./functions/telegram-bot/index.ts"
+
+[functions.get-clients]
+enabled = true
+# Public read-only endpoint required by the course assignment.
+verify_jwt = false
+import_map = "./functions/get-clients/deno.json"
+entrypoint = "./functions/get-clients/index.ts"
+
+[functions.get-messages]
+enabled = true
+# Public read-only endpoint required by the course assignment.
+verify_jwt = false
+import_map = "./functions/get-messages/deno.json"
+entrypoint = "./functions/get-messages/index.ts"
